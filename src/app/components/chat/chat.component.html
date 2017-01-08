@@ -1,0 +1,31 @@
+<div class="row">
+  <label>Användare:</label>
+  <input class="form-control" 
+         type="text"
+         [(ngModel)]="username"
+         name="username">
+  <br>
+  <!--<button (click)="setUsername()">Submit</button>-->
+</div>
+<br>
+
+<div *ngIf="username">
+  <h1 class="text-center" style="color: white">Skriv Dina Tankar</h1>
+  <input class="form-control"
+         type="text"
+         placeholder="Enter Message..."
+         [(ngModel)]="message"
+         name="message"
+         (keyup.enter)="sendMessage()">
+  <br>
+
+  <div *ngFor="let message of messages">
+    <div class="well">
+      <strong>{{message.username}}:</strong> {{message.text}}
+    </div>
+  </div>
+</div>
+<br>
+<div style="color: white" *ngIf="!username" class="text-center">
+  Ange Din Användare För Att Chatta
+</div>

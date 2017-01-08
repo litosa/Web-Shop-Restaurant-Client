@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-5" style="color:white;">
+    <app-pizza-list></app-pizza-list>
+    
+    <!--Choosen Pizza will be send up to this event...-->
+    <!--<app-pizza-list (selectedPizza)="selectedPizza = $event"></app-pizza-list>-->
+  </div>
+  <div class="col-xs-7" style="color:white;">
+    <router-outlet></router-outlet>
+    
+    <!--...And then passed on to pizza-detail component-->
+    <!--<app-pizza-detail [selectedPizza] = "selectedPizza"></app-pizza-detail>-->
+  </div>
+</div>

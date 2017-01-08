@@ -1,0 +1,9 @@
+<accordion [closeOthers]="oneAtATime">
+
+  <div class="form-group" *ngFor="let category of categories">
+    <accordion-group (click)="selectCategory(category)" [heading]="category.name">
+      <app-pizzaorder-item *ngFor="let pizza of filteredPizzas; let i = index" [pizza]="pizza" [pizzaName]="pizza.name"></app-pizzaorder-item>
+    </accordion-group>
+  </div>
+ 
+</accordion>

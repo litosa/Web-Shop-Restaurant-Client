@@ -1,0 +1,16 @@
+<a style="background: rgba(255, 255, 255, 0.75);" 
+   [routerLink]="[pizzaName]" 
+   class="list-group-item clearfix"
+   routerLinkActive="active">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ pizza.name }}</h4>
+    <!--<p class="list-group-item-text">{{ pizza.description }}</p>-->
+    <p class="list-group-item-text">$ {{ pizza.price }}</p>    
+  </div>
+  <span class="pull-right">
+    <img class="img-responsive"
+         src="{{ pizza.imageUrl }}"
+         style="max-width: 100px; max-height: 100px;">
+  </span>
+</a>
+<br>

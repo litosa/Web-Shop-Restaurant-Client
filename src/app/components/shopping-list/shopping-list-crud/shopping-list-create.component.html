@@ -1,0 +1,61 @@
+<div class="row" style="color:white;" *ngIf="pizza">
+<div class="col-xs-12">
+  <form id="shopping-list-create" (ngSubmit)="onSubmit(form.value)" #form="ngForm">
+      <div class="row">
+        <div class="col-xs-8 form-group" *ngFor="let ingredient of pizza.ingredients">
+          <label for="item-name">{{ingredient.name}}</label>
+          <input type="text" 
+                id="item-name" 
+                required 
+                class="form-control" 
+                [(ngModel)]="ingredient.name" 
+                [value]="ingredient.name" 
+                name="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <select class="form-control" id="ingredient" name="ingredient">
+              <option value="default">Välj Kategori...</option>
+              <option  *ngFor="let ingredient of pizza.ingredients">                  
+                  {{ingredient.name}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <!--<div class="col-xs-8 form-group">
+          <label for="item-name">Name</label>
+          <input type="text" 
+                 id="item-name" 
+                 required 
+                 class="form-control"
+                 [ngModel]="pizza.name"
+                 name="name">
+        </div>-->
+
+      <!--<div class="col-xs-4 form-group">
+          <label for="item-amount">Ingredients</label>
+          <input type="text" 
+                 id="item-amount" 
+                 required 
+                 class="form-control"
+                 [ngModel]="pizza.ingredients"
+                 name="ingredients">
+        </div>-->
+   
+
+    <div class="row">
+      <div class="col-xs-12">
+        <button class="btn btn-success" type="submit" *ngIf="!isAdd" [disabled]="!form.valid">Add Ingredient</button>
+        <button class="btn btn-success" type="submit" *ngIf="!isAdd" [disabled]="!form.valid">Save Changes</button>
+        <button class="btn btn-danger" type="button" *ngIf="!isAdd" (click)="onDelete()">Delete Ingredient</button>
+        <button class="btn btn-primary" type="button" *ngIf="!isAdd" (click)="onClear()">Clear</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>

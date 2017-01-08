@@ -1,0 +1,41 @@
+<div *ngIf="totalPrice > 0" class="row">
+  <div class="col-xs-offset-2 col-xs-5">
+    <!--<app-shopping-list-create [ingredient]="selectedIngredient" (cleared)="onCleared()"></app-shopping-list-create>-->
+    <!--<app-shopping-list-create [pizza]="selectedPizza" (cleared)="onCleared()"></app-shopping-list-create>-->
+    <div class="list-group-item clearfix">
+      <h4 style="background: rgba(255, 255, 255, 0.75);" 
+          class="pull-left">
+          TotalPris: {{ totalPrice }}
+      </h4>
+      <button class="pull-right btn btn-success" (click)="openCheckout()">Köp</button>
+    </div>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-offset-2 col-xs-5">
+    <div class="list-group" *ngFor="let pizza of pizzas">
+      <ul class="list-group-item-heading">
+        <button style="background: rgba(217,83,79, 50);" class="list-group-item" (click)="onRemoveFromShoppingList(pizza)">Remove From Shopping List</button>
+        <a style="background: rgba(255, 255, 255, 0.75);" 
+          class="list-group-item clearfix">
+          {{ pizza.name }} | $ {{ pizza.price }}          
+          <!--<button class="btn btn-info pull-right" (click)="onSelectPizza(pizza)">Ändra</button>-->
+        </a>
+        <li style="background: rgba(255, 255, 255, 0.75);" 
+          class="list-group-item" 
+          *ngFor="let ingredient of pizza.ingredients">
+          <!--{{ ingredient.name }} | {{ ingredient.amount | currency:'SEK' }}-->
+          {{ ingredient.name }}          
+        </li>
+        <!--<a style="background: rgba(255, 255, 255, 0.75);" 
+          class="list-group-item" 
+          *ngFor="let ingredient of pizza.ingredients"
+          (click)="onSelectIngredient(ingredient)">
+          {{ ingredient.name }} | {{ ingredient.amount | currency:'SEK' }}
+        </a>-->        
+      </ul>
+    </div>    
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12">
+    <a class="btn btn-success" [routerLink]="['new']">New Pizza</a>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <app-pizza-item *ngFor="let pizza of pizzas; let i = index" [pizza]="pizza" [pizzaName]="pizza.name"></app-pizza-item>
+      
+      <!--The choosen pizza will be passed to onSelect()-->
+      <!--<app-pizza-item *ngFor="let pizza of pizzas; let i = index" [pizza]="pizza" (click)="onSelected(pizza)"></app-pizza-item>-->
+    </ul>
+  </div>
+</div>

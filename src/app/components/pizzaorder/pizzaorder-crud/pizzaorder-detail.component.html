@@ -1,0 +1,31 @@
+<div *ngIf="selectedPizza">
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="{{selectedPizza?.imageUrl}}" 
+          class="img-responsive" 
+          style="border-radius: 100px; max-width: 200px; max-height: 500px;">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>{{selectedPizza?.name}}</h1>
+    </div>
+    <div class="col-xs-12">
+      <button class="btn btn-success" (click)="onAddToShoppingList()">Add To Shopping List</button>
+    </div>
+  </div>
+  <hr>  
+  <!--<div class="row">
+    <div class="col-xs-12">
+      <p>{{selectedPizza?.description}}</p>
+    </div>
+  </div>-->
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <!--<li style="color:black; background: rgba(255, 255, 255, 0.75);" class="list-group-item" *ngFor="let item of selectedPizza?.ingredients">{{item.name}} ({{item.amount | currency:'SEK'}})</li>-->
+        <li style="color:black; background: rgba(255, 255, 255, 0.75);" class="list-group-item" *ngFor="let item of selectedPizza?.ingredients">{{item.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
