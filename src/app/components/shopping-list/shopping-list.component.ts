@@ -15,7 +15,7 @@ export class ShoppingListComponent implements OnInit {
   pizzaPrice: number;
   totalPrice: number = 0;
 
-  // ingredients: Ingredient[] = [];
+  /// ingredients: Ingredient[] = [];
   selectedIngredient: Ingredient = null;
   selectedPizza: Pizza = null;
 
